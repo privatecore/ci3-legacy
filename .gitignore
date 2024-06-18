@@ -1,28 +1,37 @@
-.DS_Store
-
-application/cache/*
-!application/cache/index.html
-
+# CodeIgniter3
+application/config/development
 application/logs/*
 !application/logs/index.html
+!application/logs/.htaccess
 
-!application/*/.htaccess
+# Application related
+assets/*
+!assets/index.html
+*/cache/*
+!*/cache/index.html
+!*/cache/.htaccess
+*/sessions/*
+!*/sessions/index.html
+*/third_party/*
+!*/third_party/composer.json
+!*/third_party/index.html
+sitemap.xml
+tmp
 
-composer.lock
-tests/mocks/database/ci_test.sqlite
-
-user_guide_src/build/*
-user_guide_src/cilexer/build/*
-user_guide_src/cilexer/dist/*
-user_guide_src/cilexer/pycilexer.egg-info/*
+# Composer
 /vendor/
 
-# IDE Files
-#-------------------------
-/nbproject/
-.idea/*
+# Docker
+/docker/mysql/data/
 
-## Sublime Text cache files
+# JetBrains PhpStorm
+/nbproject/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
 *.tmlanguage.cache
 *.tmPreferences.cache
 *.stTheme.cache
@@ -30,3 +39,19 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.sublime-project
 /tests/tests/
 /tests/results/
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Other
+.DS_Store
+Thumbs.db
+._*
+*.bak
+*.diff
+*.lock
+*.log
+*.orig
+*.patch
+*.rej

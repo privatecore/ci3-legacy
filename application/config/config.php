@@ -240,6 +240,20 @@ $config['log_path'] = '';
 
 /*
 |--------------------------------------------------------------------------
+| Log File Name
+|--------------------------------------------------------------------------
+|
+| The default log file name. If not empty, store messages into single file,
+| instead of using date specific log file name. This can be usefull for log
+| rotation (logrotate).
+|
+| Note: Leaving it blank will default to 'log-Y-m-d'.
+|
+*/
+$config['log_file_name'] = 'error';
+
+/*
+|--------------------------------------------------------------------------
 | Log File Extension
 |--------------------------------------------------------------------------
 |
@@ -250,7 +264,7 @@ $config['log_path'] = '';
 | Note: Leaving it blank will default to 'php'.
 |
 */
-$config['log_file_extension'] = '';
+$config['log_file_extension'] = 'log';
 
 /*
 |--------------------------------------------------------------------------

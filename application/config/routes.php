@@ -1,5 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -49,6 +48,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
-$route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
+$route['default_controller'] = 'public/welcome/index';
+$route['404_override'] = 'public/errors/error_404';
+$route['translate_uri_dashes'] = TRUE;
+
+ // cli
+ $route['cli/(:any)/(:any)/(:any)'] = 'cli/$1/$2/$3';
+ $route['cli/(:any)/(:any)'] = 'cli/$1/$2';
+ $route['cli/(:any)'] = 'cli/$1/index';
+
+// admin
+$route['admin/index'] = 'admin/dashboard/index';
+$route['admin'] = 'admin/dashboard/index';
+$route['admin/(:any)/(:any)/(:any)/(:num)'] = 'admin/$1/$2/$3/$4';
+$route['admin/(:any)/(:any)/(:any)'] = 'admin/$1/$2/$3';
+$route['admin/(:any)/(:any)/(:num)'] = 'admin/$1/$2/$3';
+$route['admin/(:any)/(:any)'] = 'admin/$1/$2/index';
+$route['admin/(:any)'] = 'admin/$1/index';
+
+// public
+$route['(.*)'] = 'public/information/index';

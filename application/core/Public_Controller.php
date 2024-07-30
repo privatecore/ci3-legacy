@@ -47,6 +47,21 @@ class Public_Controller extends MY_Controller {
 	// --------------------------------------------------------------------
 
 	/**
+	 * Process page content view based on prepared data and filters
+	 *
+	 * @return void
+	 */
+	protected function process_page()
+	{
+		// trigger all necessary events to prepare the content for output
+		$this->page_content = $this->trigger('before_output', $this->page_content);
+
+		$this->theme->render($this->page_view, $this->page_content);
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
 	 * Show Error Page
 	 *
 	 * @param  int  $status_code
